@@ -72,6 +72,7 @@ function findAveragePhonePrice(phones){
 }
 console.log(`The avarage price of device is ${findAveragePhonePrice(phones)} TK`);
 
+console.log('============================');
 
 // Task -5: (Hard)
 // For each employee their current salary is calculated by multiplying yearly increment with experience then adding the result to the starting salary. Now calculate is the total salary has to be provided by the company in a month.
@@ -81,3 +82,12 @@ const employees = [
   { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
   { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
 ];
+function calculateSalary(salary){
+  result = 0;
+  for(const person of salary){
+    let money = (person.experience * person.increment) + person.starting;
+    result += money;
+  }
+  return result;
+}
+console.log(`Total salarty has to be provided by the company in a month is ${calculateSalary(employees)} TK`);
