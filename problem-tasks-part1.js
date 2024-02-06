@@ -60,6 +60,23 @@ console.log('==========================');
 // Write a function to find the longest word in a given string.
 // sample-input: I am learning Programming to become a programmer
 // sample-output: Programming
+const str ='I am learning Programming to become a programmer';
+function longestWord(string){
+    let singleWord = string.split(" ");
+    let longest = '';
+    for(const single of singleWord){
+        if(longest.length < single.length){
+            longest = single;
+        }
+    }
+    return longest;
+}
+const longWord = longestWord(str)
+console.log(longWord);
+
+
+console.log(';=============================');
 
 // Task-5:
 // Generate a random number between 10 to 20.
+console.log(Math.round(Math.random()*10));
