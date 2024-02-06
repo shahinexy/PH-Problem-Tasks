@@ -16,7 +16,20 @@ console.log('=======================');
 
 // Task -2:
 // Find the friend with the smallest name.
-const heights2 = ["rahim", "robin", "rafi", "ron", "rashed"];
+const nameArray = ["rahim", "robin", "rafi", "ron", "rashed"];
+function nameFunction(names){
+  let smallestNamme = names[0];
+  for(const name of names){
+    if(smallestNamme.length > name.length){
+      smallestNamme = name;
+    }
+  }
+  return smallestNamme;
+}
+console.log(nameFunction(nameArray));
+
+console.log('=========================');
+
 
 // Task-3:
 // Your task is to calculate the total budget required to buy electronics:
@@ -24,6 +37,18 @@ const heights2 = ["rahim", "robin", "rafi", "ron", "rashed"];
 //     tablet = 15000 tk
 //     mobile = 20000 tk
 // Write a JavaScript function named calculateElectronicsBudget that takes in the number of laptop, tablets, and mobile and returns the total money required.
+function calculateElectronicsBudget(laptop, tablet, mobile){
+  const laptopPrice = 35000 * laptop;
+  const tabletPrice = 15000 * tablet;
+  const mobilePrice = 20000 * mobile;
+  return laptopPrice + tabletPrice + mobilePrice;
+}
+const laptopNum = 1;
+const tabletNum = 1;
+const mobileNum = 3;
+console.log(`Total money requierd ${calculateElectronicsBudget(laptopNum, tabletNum, mobileNum)} TK`);
+
+console.log('==========================');
 
 // Task-4:
 // You are given an array of phone objects, each containing information about the model, brand, and price. Your task is to write a JavaScript function named findAveragePhonePrice that takes this array as input and returns the average price of phone.
@@ -36,10 +61,20 @@ const phones = [
   { model: "PhoneE", brand: "Iphone", price: 105000 },
   { model: "PhoneF", brand: "HTC", price: 48000 },
 ];
+function findAveragePhonePrice(phones){
+  let sumOfPrice = 0;
+  let number = 0;
+  for(const phone of phones){
+    sumOfPrice += phone.price
+    number += 1;
+  }
+  return sumOfPrice / number;
+}
+console.log(`The avarage price of device is ${findAveragePhonePrice(phones)} TK`);
+
 
 // Task -5: (Hard)
 // For each employee their current salary is calculated by multiplying yearly increment with experience then adding the result to the starting salary. Now calculate is the total salary has to be provided by the company in a month.
-
 const employees = [
   { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
   { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
